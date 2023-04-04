@@ -37,6 +37,24 @@ for j in range(256):
         guess_plaintext = int(original_byte, 16)^j^(i%16+1)
         plaintext.append('{0:0>2x}'.format(guess_plaintext))
         break
-    
+
+nblock = len(ID) // 16
+for block in range(1, nblock):
+    block_pt = b""
+    block_ct = ID[block * 16 : (block + 1) * 16]
+    last_ct = ID[(block - 1) * 16 : block * 16]
+    for idx in range(15, -1, -1):
+        postfix = bytes([i ^ j for i, j in zip(block_pt, last_ct[idx + 1:])])
+        prefix = last_ct[:idx]
+        for i in range(256):
+            now = prefix + bytes([i ^ last_ct[idx]]) + postfix + block_ct
+            r.sendline(now)
+            padding_correct = True if 'Hint: It seems feasible...' in r.recvline().strip().decode() else False
+            if padding_correct:
+                block_pt = bytes(i ^ 0x80) + block_pt
+                break
+        else:
+            block_pt = bytes([0x80]) + block_pt
+
 
 r.interactive()
