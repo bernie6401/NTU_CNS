@@ -1,5 +1,6 @@
 *.pdf
 *.docx
+*.tmp
 HW1/hw1/release/clandestine-operation/LEA_practice/HashPump/
 HW1/hw1/release/clandestine-operation/__pycache__/*
 !HW1/*.pdf
