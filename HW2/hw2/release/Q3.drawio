@@ -1,0 +1,106 @@
+<mxfile host="65bd71144e">
+    <diagram id="a6d2ueEH8bK_AmlGdDqC" name="Page-1">
+        <mxGraphModel dx="1168" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="12" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="w'" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="12" vertex="1" connectable="0">
+                    <mxGeometry x="0.1758" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-12" y="-2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="215" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="cheat_s&amp;nbsp;&lt;span class=&quot;mathjax&quot;&gt;&lt;span role=&quot;presentation&quot; data-mathml=&quot;&lt;math xmlns=&amp;quot;http://www.w3.org/1998/Math/MathML&amp;quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;&amp;amp;#x2208;&lt;/mo&gt;&lt;mrow class=&amp;quot;MJX-TeXAtom-ORD&amp;quot;&gt;&lt;mi mathvariant=&amp;quot;double-struck&amp;quot;&gt;M&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;&quot; style=&quot;font-size: 113%; position: relative;&quot; tabindex=&quot;0&quot; class=&quot;mjx-chtml MathJax_CHTML&quot; id=&quot;MathJax-Element-138-Frame&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;mjx-math&quot; id=&quot;MJXc-Node-3311&quot;&gt;&lt;span class=&quot;mjx-mrow&quot; id=&quot;MJXc-Node-3312&quot;&gt;&lt;span class=&quot;mjx-mo MJXc-space3&quot; id=&quot;MJXc-Node-3316&quot;&gt;&lt;span style=&quot;padding-top: 0.279em; padding-bottom: 0.39em;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;∈ {0,1}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="17" vertex="1" connectable="0">
+                    <mxGeometry x="-0.7062" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="Challenger&lt;br&gt;User Ui" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="210" width="90" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="3" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="C1||C2||...||Cl" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="10" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1636" relative="1" as="geometry">
+                        <mxPoint x="-11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="3" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="if w==w', then send back&lt;br&gt;r1||r2||...||rl" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="14" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2465" y="2" relative="1" as="geometry">
+                        <mxPoint x="-17" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="3" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="470" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="Guess j&amp;nbsp;&lt;span class=&quot;mathjax&quot;&gt;&lt;span role=&quot;presentation&quot; data-mathml=&quot;&lt;math xmlns=&amp;quot;http://www.w3.org/1998/Math/MathML&amp;quot;&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;&amp;amp;#x2208;&lt;/mo&gt;&lt;mrow class=&amp;quot;MJX-TeXAtom-ORD&amp;quot;&gt;&lt;mi mathvariant=&amp;quot;double-struck&amp;quot;&gt;M&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;&quot; style=&quot;font-size: 113%; position: relative;&quot; tabindex=&quot;0&quot; class=&quot;mjx-chtml MathJax_CHTML&quot; id=&quot;MathJax-Element-138-Frame&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;mjx-math&quot; id=&quot;MJXc-Node-3311&quot;&gt;&lt;span class=&quot;mjx-mrow&quot; id=&quot;MJXc-Node-3312&quot;&gt;&lt;span class=&quot;mjx-mo MJXc-space3&quot; id=&quot;MJXc-Node-3316&quot;&gt;&lt;span style=&quot;padding-top: 0.279em; padding-bottom: 0.39em;&quot; class=&quot;mjx-char MJXc-TeX-main-R&quot;&gt;∈ {1, l}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="18" vertex="1" connectable="0">
+                    <mxGeometry x="-0.6108" y="1" relative="1" as="geometry">
+                        <mxPoint x="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="Adversarial Server S" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="425" y="210" width="90" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="215" y="115"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="(pk1, sk1)&lt;br&gt;...&lt;br&gt;(pkl, skl)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5" vertex="1" connectable="0">
+                    <mxGeometry x="0.1375" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="9" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="4" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="470" y="115"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="(pk1,...,pkl)&lt;br&gt;&amp;amp;&lt;br&gt;(r1,...,rl)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6" vertex="1" connectable="0">
+                    <mxGeometry x="0.1871" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Protocol&amp;nbsp;π(G, S, U)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="100" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;html=1;" parent="1" source="16" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Exp^anon_π,A,l(n)" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="285" y="380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Output&amp;nbsp;&lt;span style=&quot;font-size: 12.43px;&quot;&gt;∈ {0,1}&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="285" y="470" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;entryX=-0.016;entryY=0.404;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="26" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="i&amp;nbsp;&lt;span style=&quot;font-size: 12.43px;&quot;&gt;∈ {1,...,l}&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="240" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
