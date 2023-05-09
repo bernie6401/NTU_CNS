@@ -23,6 +23,8 @@ class Packet:
 
     def add_next_hop(self, target, pk):
         # TODO
+        StreamCipher.encrypt(one_time_key, cipher)
+        one_time_key = PublicKeyCipher.encrypt(sk, tmp)
         pass
 
     def decrypt_client(self, sk):
