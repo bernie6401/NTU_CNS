@@ -23,9 +23,10 @@ class Packet:
 
     def add_next_hop(self, target, pk):
         # TODO
+        tmp, cipher = self.data[:32], self.data[32:]
+        one_time_key = PublicKeyCipher.encrypt(pk, tmp)
         StreamCipher.encrypt(one_time_key, cipher)
-        one_time_key = PublicKeyCipher.encrypt(sk, tmp)
-        pass
+        return 
 
     def decrypt_client(self, sk):
         assert len(self.data) == 400
