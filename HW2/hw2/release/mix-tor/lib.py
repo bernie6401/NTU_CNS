@@ -15,17 +15,30 @@ class Packet:
         return f'Packet({self.data})'
 
     @staticmethod
-    def create(message, send_to: int, pk):
-        assert len(message) <= 40
-        message = message.ljust(400, b'\x00')
-        data = message # TODO: create the correct data
-        return Packet(data)
+    def create(message, send_to: int, pk, i):
+        if send_to == b'3':
+            assert len(message) <= 40
+            message = message.ljust(368, b'\x00')
+            one_time_key = int(randbytes(8).hex(), 16)
 
+            tmp = StreamCipher.encrypt(one_time_key, message)
+            cipher_otp = PublicKeyCipher.encrypt(pk, one_time_key)
+
+            return (cipher_otp + tmp).hex()
+        
+        else:
+            assert len(message) == 800
+            send_to = send_to.rjust(20, b' ')
+            one_time_key = int(randbytes(8).hex(), 16)
+
+            cipher = StreamCipher.encrypt(one_time_key, send_to + message.encode())[:368]
+            cipher_otp = PublicKeyCipher.encrypt(pk, one_time_key)
+
+            return (cipher_otp + cipher).hex()
+
+    
     def add_next_hop(self, target, pk):
         # TODO
-        tmp, cipher = self.data[:32], self.data[32:]
-        one_time_key = PublicKeyCipher.encrypt(pk, tmp)
-        StreamCipher.encrypt(one_time_key, cipher)
         return 
 
     def decrypt_client(self, sk):

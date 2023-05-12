@@ -3,6 +3,7 @@ from tqdm import trange
 from itertools import cycle
 from time import sleep
 from lib import Packet, PublicKeyCipher
+# from factordb.factordb import FactorDB
 
 
 r = remote('cns.csie.org', 12805)
@@ -26,24 +27,35 @@ log.info("server0 n: {}\nserver1 n: {}\nserver2 n: {}\n bob n: {}".format(server
 r.recvuntil(b"The route of the packet should be [")
 route = r.recvline().strip().decode().split("]")[0].split(', ')
 log.info("The route sequence is: {}".format(route))
+r.recvline()
 
 
-'''Add next hop'''
-packet = Packet(bytes.fromhex(message))
-for i in range(len(route) - 1):
-    next_hop, next_packet = packet.add_next_hop(message, (server_n[i], e))
-    assert next_hop == route[i+1]
-    packet = next_packet
-message = packet.encrypt_client(sk[3])
-assert message == b'Give me flag, now!'
+'''Compute Private Key'''
+# p, q = {}, {}
+# for i in range(4):
+#     f = FactorDB(server_n[i])
+#     response = f.connect()
+#     tmp = f.get_factor_list()
 
 
-'''Testing'''
-# for i in range(len(route) - 1):
-#     next_hop, next_packet = packet.decrypt_server(sk[route[i]])
-#     assert next_hop == route[i+1]
-#     packet = next_packet
-# message = packet.decrypt_client(sk[3])
-# assert message == b'Give me flag, now!'
+packet = b'Give me flag, now!'
+for i in trange(len(route)):
+    send_to = route[-1-i].encode()
+    pk = (server_n[int(route[-1-i])], e)
+    packet = Packet.create(packet, send_to, pk, i)
+
+    '''test part'''
+    # if i >= 0:
+    #     sk = input()
+    #     tmp = Packet(bytes.fromhex(packet))
+    #     if i == 0:
+    #         message = tmp.decrypt_client((server_n[int(route[-1-i])], int(sk)))
+    #     else:
+    #         next_hop, next_packet = tmp.decrypt_server((server_n[int(route[-1-i])], int(sk)))
+    #     # next_hop, next_packet = tmp.decrypt_server((server_n[int(route[-1-i])], int(sk)))
+    #     # assert next_hop == route[-1-i]
+    #     # tmp = next_packet
+print(len(packet))
+r.sendlineafter(b'> ', packet)
 
 r.interactive()
