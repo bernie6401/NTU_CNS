@@ -8,3 +8,6 @@ HW1/hw1/release/clandestine-operation/__pycache__/*
 HW1/hw1/release/clandestine-operation/Padding-oracle-attack
 
 HW2/hw2/release/mix-tor/__pycache__/*
+!HW2/*.pdf
+!HW3/*.pdf
+!Final Project/*.pdf
