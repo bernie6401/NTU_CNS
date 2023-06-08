@@ -53,7 +53,7 @@ if __name__ == "__main__":
     digest = acc.Digest()
     members = set()
     for _ in range(30):
-        alarm(100)
+        # alarm(100)
         print( f"\nOptions:")
         print( f"[0] Prove membership for something not being member.")
         print( f"[1] Add a member.")

@@ -52,6 +52,8 @@ class RSA_Accumulator:
         digest = self.g
         # TODO: Digest all the elements in memberSet.
         #       Hint: digest = g ^ ( product of "all the primes in memberSet"  )
+        for i in self.memberSet:
+            digest = pow(digest, i, self.N)
         
         return digest
 
@@ -62,6 +64,9 @@ class RSA_Accumulator:
         proof = self.g
         # TODO: Make a membership proof for m.
         #       Hint: proof = g ^ ( product of "all the primes in memberSet except for m" )
+        for i in self.memberSet:
+            if m != i:
+                proof = pow(proof, i, self.N)
         
         return proof
 
@@ -70,21 +75,42 @@ class RSA_Accumulator:
         # TODO: Verify the membership proof of m.
         #       Hint: Check "proof ^ m == d"
 
+        return pow(proof, m, N) == d
 
     def NonMembershipProof(self, content):
         m = self.HashToPrime(content)
-        if m in self.memberSet: raise ValueError
+        # if m in self.memberSet: raise ValueError
         
         # TODO: Make a non-membership proof for m.
         #       Hint: let delta = product of "all the primes in memberSet except for m.
         #             find (a, b) satisfy a * m + b * delta = 1 
         #             proof = (g^a, b)
         #             p.s. since gcd(m, delta) == 1, you can use xgcd(Extended Euclidean algorithm) to find (a, b)
+
+        delta = 1
+        for i in self.memberSet:
+            delta *= i
+
+        gcd, a, b = xgcd(m, delta)
+        # print("gcd = ", gcd)
+        result = pow(self.g, a, self.N)
+        return (result, b)
     
     def NonMembershipVerification(self, N, content, d, proof, g):
         m = self.HashToPrime(content)
         # TODO: Verify the non-membership proof of m.
         #       Hint: Check "(g^a)^m * digest^b == g^(a*m + b*delta) == g"
+            
+        second_power = pow(d, proof[1], N)
+        return (pow(proof[0], m, N) * second_power) % N == g
+
+
+def xgcd(a, b):
+    if a == 0:
+        return b, 0, 1
+    else:
+        gcd, x, y = xgcd(b % a, a)
+        return gcd, y - (b // a) * x, x
 
 if __name__ == "__main__":
     
