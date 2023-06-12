@@ -3,6 +3,7 @@ import gmpy2
 # from hashlib import sha256
 from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA256
+from base64 import urlsafe_b64encode, urlsafe_b64decode
 
 
 
@@ -10,7 +11,7 @@ def initialize(message, c_or_m):
     if c_or_m == 'c':
         return gmpy2.mpz(int(base64.b64decode(message).hex(), 16))
     elif c_or_m == 'm':
-        return gmpy2.mpz(int(pkcs1_15._EMSA_PKCS1_V1_5_ENCODE(SHA256.new(base64.b64decode(message)), 256).hex(), 16))
+        return gmpy2.mpz(int(pkcs1_15._EMSA_PKCS1_V1_5_ENCODE(SHA256.new(message.encode()), 256).hex(), 16))
 
 ciphertext = {
     0 : "P3CrfkIst3dMk-mb7-iFeKTHXjSUfT4pfizXwfSfWBTgr43r072K0ObHOYzeVYiYKGzDR9ASOfvmqzEk6h0wp41w9vXxdLjEbkm5jEgcSp7BKf9nWx3p_eWq9vfAH-fFz4KbbYaukKuqjMwy_RwxG6BzjWBLpCAjJSjtES9rHWmQsoWDZ_EKZqkTg49pVk4gwgNWr3ENno1C-R2_jMqaic-Gz8zlwwArIlEC6PaADnmRr_fxrS8k16gLjJWuvl_dI4fFAZv7-DwovUrVHsX1tsaw-SzrhmalP-w8sd7bx8eXO2yauL9myCWJGQKvtqS-EMGeYZSaU6NJ0u3h4CAkAQ==",
