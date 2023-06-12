@@ -3,6 +3,7 @@ import gmpy2
 # from hashlib import sha256
 from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA256
+from base64 import urlsafe_b64encode, urlsafe_b64decode
 
 
 def initialize(message, c_or_m):
