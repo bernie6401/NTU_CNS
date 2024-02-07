@@ -1,4 +1,7 @@
 # NTUCNS
+
+[![hackmd-github-sync-badge](https://hackmd.io/Iq-BKMjHTmStTq2Qhgju7g/badge)](https://hackmd.io/Iq-BKMjHTmStTq2Qhgju7g)
+
 ## Homework
 - [HW1](https://hackmd.io/@SBK6401/HJ3V9d_kh)
 - [HW2](https://hackmd.io/@SBK6401/SJobiaxQ3)
